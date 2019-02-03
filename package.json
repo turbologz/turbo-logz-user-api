@@ -28,7 +28,7 @@
     "prestart": "npm run build",
     "start": "node .",
     "prepublishOnly": "npm run test",
-    "kube": "telepresence --swap-deployment test-unicron-user-api --expose 3000 --run cross-env PORT=3000 yarn start",
+    "kube": "telepresence --swap-deployment test-unicron-user-api --expose 3000 --run cross-env PORT=3000 yarn start"
   },
   "repository": {
     "type": "git"
