@@ -29,9 +29,6 @@
     "start": "node .",
     "prepublishOnly": "npm run test",
     "kube": "telepresence --swap-deployment test-unicron-user-api --expose 3000 --run cross-env PORT=3000 yarn start",
-    "docker": "docker build -t turbologz/turbo-logz-user-api .",
-    "docker:tag": "docker tag turbologz/turbo-logz-user-api turbologz/turbo-logz-user-api",
-    "docker:push": "docker push turbologz/turbo-logz-user-api"
   },
   "repository": {
     "type": "git"
