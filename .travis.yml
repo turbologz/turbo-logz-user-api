@@ -4,7 +4,7 @@ node_js:
 services:
   - docker
 install:
-  - yarn --ingore-engines
+  - yarn --ignore-engines
   - yarn test
   - yarn docker
 deploy:
