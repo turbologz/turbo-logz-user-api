@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - '8'
+services:
+  - docker
+install:
+  - yarn
+  - yarn test
+  - yarn docker
+deploy:
+  - provider: script
+    script: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && yarn docker:tag && yarn docker:push
+    on:
+      branch: master
