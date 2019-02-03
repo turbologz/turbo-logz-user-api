@@ -6,9 +6,9 @@ services:
 install:
   - yarn --ignore-engines
   - yarn test
-  - yarn docker
+  - docker build -t turbologz/turbo-logz-user-api:$TRAVIS_BUILD_NUMBER .
 deploy:
   - provider: script
-    script: docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_PASSWORD" && yarn docker:tag && yarn docker:push
+    script: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" && yarn docker:tag && yarn docker:push
     on:
       branch: master
